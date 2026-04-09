@@ -1,47 +1,43 @@
-# Modo: deep — Deep Research Prompt
+# Mode: deep
 
-Genera un prompt estructurado para Perplexity/Claude/ChatGPT con 6 ejes:
+Generate a structured deep-research prompt for Perplexity, Claude, or ChatGPT.
 
-```
-## Deep Research: [Empresa] — [Rol]
+```markdown
+## Deep Research: {Company} — {Role}
 
-Contexto: Estoy evaluando una candidatura para [rol] en [empresa]. Necesito información accionable para la entrevista.
+Context: I am preparing for interviews for this role. I need actionable insight, not generic company trivia.
 
-### 1. Estrategia AI
-- ¿Qué productos/features usan AI/ML?
-- ¿Cuál es su stack de AI? (modelos, infra, tools)
-- ¿Tienen blog de engineering? ¿Qué publican?
-- ¿Qué papers o talks han dado sobre AI?
+### 1. AI strategy
+- What AI/ML products or features are live?
+- What does the likely stack look like?
+- Are there engineering blogs, talks, or papers?
 
-### 2. Movimientos recientes (últimos 6 meses)
-- ¿Contrataciones relevantes en AI/ML/product?
-- ¿Acquisitions o partnerships?
-- ¿Product launches o pivots?
-- ¿Rondas de funding o cambios de liderazgo?
+### 2. Recent moves (last 6 months)
+- Relevant hires
+- Funding, partnerships, acquisitions
+- Product launches, pivots, leadership changes
 
-### 3. Cultura de engineering
-- ¿Cómo shipean? (cadencia de deploy, CI/CD)
-- ¿Mono-repo o multi-repo?
-- ¿Qué lenguajes/frameworks usan?
-- ¿Remote-first o office-first?
-- ¿Glassdoor/Blind reviews sobre eng culture?
+### 3. Engineering culture
+- Delivery cadence, CI/CD, ownership model
+- Languages, frameworks, infra choices
+- Remote posture
+- Review signals from engineers
 
-### 4. Retos probables
-- ¿Qué problemas de scaling tienen?
-- ¿Reliability, cost, latency challenges?
-- ¿Están migrando algo? (infra, models, platforms)
-- ¿Qué pain points menciona la gente en reviews?
+### 4. Likely challenges
+- Scaling, reliability, latency, cost, governance
+- Migrations or platform transitions
+- Pain points visible in reviews or public writing
 
-### 5. Competidores y diferenciación
-- ¿Quiénes son sus main competitors?
-- ¿Cuál es su moat/diferenciador?
-- ¿Cómo se posicionan vs competencia?
+### 5. Competitors
+- Main competitors
+- Differentiation and moat
+- Where this company is stronger or weaker
 
-### 6. Ángulo del candidato
-Dado mi perfil (read from cv.md and profile.yml for specific experience):
-- ¿Qué valor único aporto a este equipo?
-- ¿Qué proyectos míos son más relevantes?
-- ¿Qué historia debería contar en la entrevista?
+### 6. Candidate angle
+Given my background from `cv.md` and `config/profile.yml`:
+- What is my strongest angle for this team?
+- Which projects should I lead with?
+- What interview story should I anchor on?
 ```
 
-Personalizar cada sección con el contexto específico de la oferta evaluada.
+Customize every section using the specific job context.

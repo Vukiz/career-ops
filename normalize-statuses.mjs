@@ -3,10 +3,10 @@
  * normalize-statuses.mjs — Clean non-canonical states in applications.md
  *
  * Maps all non-canonical statuses to canonical ones per states.yml:
- *   Evaluada, Aplicado, Respondido, Entrevista, Oferta, Rechazado, Descartado, NO APLICAR
+ *   Evaluated, Applied, Responded, Interview, Offer, Rejected, Discarded, SKIP
  *
  * Also strips markdown bold (**) and dates from the status field,
- * moving DUPLICADO info to the notes column.
+ * moving duplicate / repost info to the notes column.
  *
  * Run: node career-ops/normalize-statuses.mjs [--dry-run]
  */
@@ -27,66 +27,62 @@ function normalizeStatus(raw) {
   let s = raw.replace(/\*\*/g, '').trim();
   const lower = s.toLowerCase();
 
-  // DUPLICADO variants → Descartado
-  if (/^duplicado/i.test(s) || /^dup\b/i.test(s)) {
-    return { status: 'Descartado', moveToNotes: raw.trim() };
+  // Duplicate / repost variants → Discarded
+  if (/^(duplicate|dup\b)/i.test(s)) {
+    return { status: 'Discarded', moveToNotes: raw.trim() };
   }
 
-  // CERRADA → Descartado
-  if (/^cerrada$/i.test(s)) return { status: 'Descartado' };
+  // Closed → Discarded
+  if (/^closed$/i.test(s)) return { status: 'Discarded' };
 
-  // Cancelada (possibly with date) → Descartado
-  if (/^cancelada/i.test(s)) return { status: 'Descartado' };
+  // Cancelled (possibly with date) → Discarded
+  if (/^cancelled/i.test(s) || /^canceled/i.test(s)) return { status: 'Discarded' };
 
-  // Descartada → Descartado
-  if (/^descartada$/i.test(s)) return { status: 'Descartado' };
+  // Discarded
+  if (/^discarded$/i.test(s)) return { status: 'Discarded' };
 
-  // Rechazada → Rechazado
-  if (/^rechazada$/i.test(s)) return { status: 'Rechazado' };
+  // Rejected
+  if (/^rejected$/i.test(s)) return { status: 'Rejected' };
 
-  // Rechazado with date → Rechazado (strip date)
-  if (/^rechazado\s+\d{4}/i.test(s)) return { status: 'Rechazado' };
+  // Rejected with date → Rejected (strip date)
+  if (/^rejected\s+\d{4}/i.test(s)) return { status: 'Rejected' };
 
-  // Aplicado with date → Aplicado (strip date)
-  if (/^aplicado\s+\d{4}/i.test(s)) return { status: 'Aplicado' };
+  // Applied with date → Applied (strip date)
+  if (/^applied\s+\d{4}/i.test(s)) return { status: 'Applied' };
 
-  // CONDICIONAL → Evaluada
-  if (/^condicional$/i.test(s)) return { status: 'Evaluada' };
+  // Draft / triage states → Evaluated
+  if (/^conditional$/i.test(s)) return { status: 'Evaluated' };
 
-  // HOLD → Evaluada
-  if (/^hold$/i.test(s)) return { status: 'Evaluada' };
+  if (/^hold$/i.test(s) || /^on hold$/i.test(s)) return { status: 'Evaluated' };
 
-  // MONITOR → Evaluada
-  if (/^monitor$/i.test(s)) return { status: 'Evaluada' };
+  if (/^monitor$/i.test(s)) return { status: 'Evaluated' };
 
-  // EVALUAR → Evaluada
-  if (/^evaluar$/i.test(s)) return { status: 'Evaluada' };
+  if (/^review$/i.test(s) || /^evaluate$/i.test(s)) return { status: 'Evaluated' };
 
-  // Verificar → Evaluada
-  if (/^verificar$/i.test(s)) return { status: 'Evaluada' };
+  if (/^verify$/i.test(s)) return { status: 'Evaluated' };
 
-  // GEO BLOCKER → NO APLICAR
-  if (/geo.?blocker/i.test(s)) return { status: 'NO APLICAR' };
+  // GEO BLOCKER → SKIP
+  if (/geo.?blocker/i.test(s)) return { status: 'SKIP' };
 
-  // Repost #NNN → Descartado
-  if (/^repost/i.test(s)) return { status: 'Descartado', moveToNotes: raw.trim() };
+  // Repost #NNN → Discarded
+  if (/^repost/i.test(s) || /^reposted/i.test(s)) return { status: 'Discarded', moveToNotes: raw.trim() };
 
-  // "—" (em dash, no status) → Descartado
-  if (s === '—' || s === '-' || s === '') return { status: 'Descartado' };
+  // No status → Discarded
+  if (s === '—' || s === '-' || s === '') return { status: 'Discarded' };
 
   // Already canonical — just fix casing/bold
   const canonical = [
-    'Evaluada', 'Aplicado', 'Respondido', 'Entrevista',
-    'Oferta', 'Rechazado', 'Descartado', 'NO APLICAR',
+    'Evaluated', 'Applied', 'Responded', 'Interview',
+    'Offer', 'Rejected', 'Discarded', 'SKIP',
   ];
   for (const c of canonical) {
     if (lower === c.toLowerCase()) return { status: c };
   }
 
   // Aliases from states.yml
-  if (['enviada', 'aplicada', 'applied', 'sent'].includes(lower)) return { status: 'Aplicado' };
-  if (['cerrada', 'descartada'].includes(lower)) return { status: 'Descartado' };
-  if (['no aplicar', 'no_aplicar', 'skip'].includes(lower)) return { status: 'NO APLICAR' };
+  if (['applied', 'sent'].includes(lower)) return { status: 'Applied' };
+  if (['closed'].includes(lower)) return { status: 'Discarded' };
+  if (['skip'].includes(lower)) return { status: 'SKIP' };
 
   // Unknown — flag it
   return { status: null, unknown: true };
@@ -108,7 +104,7 @@ for (let i = 0; i < lines.length; i++) {
   if (!line.startsWith('|')) continue;
 
   const parts = line.split('|').map(s => s.trim());
-  // Format: ['', '#', 'fecha', 'empresa', 'rol', 'score', 'STATUS', 'pdf', 'report', 'notas', '']
+  // Format: ['', '#', 'date', 'company', 'role', 'score', 'STATUS', 'pdf', 'report', 'notes', '']
   if (parts.length < 9) continue;
   if (parts[1] === '#' || parts[1] === '---' || parts[1] === '') continue;
 
@@ -129,7 +125,7 @@ for (let i = 0; i < lines.length; i++) {
   const oldStatus = rawStatus;
   parts[6] = result.status;
 
-  // Move DUPLICADO info to notes if needed
+  // Move duplicate/repost info to notes if needed
   if (result.moveToNotes && parts[9]) {
     const existing = parts[9] || '';
     if (!existing.includes(result.moveToNotes)) {

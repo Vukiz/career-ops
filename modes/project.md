@@ -1,30 +1,29 @@
-# Modo: project — Evaluación de Proyecto Portfolio
+# Mode: project
 
-Scoring 6 dimensiones (1-5):
+Evaluate a portfolio project idea against the candidate's target roles.
 
-| Dimensión | Peso | 5 = ... | 1 = ... |
-|-----------|------|---------|---------|
-| Señal para roles target | 25% | Directamente demuestra skill del JD | No relacionado |
-| Unicidad | 20% | Nadie ha hecho esto | Todo el mundo lo tiene |
-| Demo-ability | 20% | Live demo en 2 min | Solo código, no visual |
-| Potencial de métricas | 15% | Métricas claras (latency, cost, accuracy) | Sin métricas posibles |
-| Tiempo a MVP | 10% | 1 semana | 3+ meses |
-| Potencial de historia STAR | 10% | Historia rica con trade-offs | Solo implementación |
+## Scoring dimensions
 
-## Requisitos de "Interview Pack"
+| Dimension | Weight |
+|-----------|--------|
+| Signal for target roles | 25% |
+| Uniqueness | 20% |
+| Demo quality | 20% |
+| Metrics potential | 15% |
+| Time to MVP | 10% |
+| STAR-story potential | 10% |
 
-Para cada proyecto aprobado:
-1. **One-pager**: producto + arquitectura + métricas + plan de evaluación
-2. **Demo**: URL live o walkthrough grabado de 2 min
-3. **Postmortem**: qué funcionó, qué no, mitigaciones
+## Interview pack requirements
 
-## Plan 80/20
+For any approved project, define:
+1. A one-pager with product, architecture, metrics, and evaluation plan.
+2. A short live demo or recorded walkthrough.
+3. A postmortem with trade-offs and lessons learned.
 
-- Semana 1 → MVP con métrica core
-- Semana 2 → polish + interview pack
+## Verdicts
 
-## Veredictos
+- `BUILD`
+- `SKIP`
+- `PIVOT TO {alternative}`
 
-- **CONSTRUIR** → plan con milestones semanales
-- **SKIP** → por qué y qué hacer en su lugar
-- **PIVOTAR A [alternativa]** → variante más impactante
+If building, give an 80/20 plan with weekly milestones.

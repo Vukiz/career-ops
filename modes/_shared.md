@@ -1,104 +1,81 @@
-# System Context -- career-ops
+# System Context
 
-<!-- ============================================================
-     THIS FILE IS AUTO-UPDATABLE. Don't put personal data here.
-     
-     Your customizations go in modes/_profile.md (never auto-updated).
-     This file contains system rules, scoring logic, and tool config
-     that improve with each career-ops release.
-     ============================================================ -->
+This file is auto-updatable. Keep user-specific content in `modes/_profile.md`.
 
-## Sources of Truth
+## Sources of truth
 
-| File | Path | When |
-|------|------|------|
-| cv.md | `cv.md` (project root) | ALWAYS |
-| article-digest.md | `article-digest.md` (if exists) | ALWAYS (detailed proof points) |
-| profile.yml | `config/profile.yml` | ALWAYS (candidate identity and targets) |
-| _profile.md | `modes/_profile.md` | ALWAYS (user archetypes, narrative, negotiation) |
+| File | When |
+|------|------|
+| `cv.md` | Always |
+| `config/profile.yml` | Always |
+| `modes/_profile.md` | Always, after this file |
+| `article-digest.md` | When present |
 
-**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md at evaluation time.
-**RULE: For article/project metrics, article-digest.md takes precedence over cv.md.**
-**RULE: Read _profile.md AFTER this file. User customizations in _profile.md override defaults here.**
+Rules:
+- Never invent metrics or experience.
+- Read proof points from the files above at evaluation time.
+- If `article-digest.md` and `cv.md` disagree, prefer `article-digest.md` for published project metrics.
 
----
+## Scoring
 
-## Scoring System
-
-The evaluation uses 6 blocks (A-F) with a global score of 1-5:
+Use a 1-5 global score with these dimensions:
 
 | Dimension | What it measures |
-|-----------|-----------------|
-| Match con CV | Skills, experience, proof points alignment |
-| North Star alignment | How well the role fits the user's target archetypes (from _profile.md) |
-| Comp | Salary vs market (5=top quartile, 1=well below) |
-| Cultural signals | Company culture, growth, stability, remote policy |
-| Red flags | Blockers, warnings (negative adjustments) |
-| **Global** | Weighted average of above |
+|-----------|------------------|
+| CV match | Skills, experience, proof-point fit |
+| North Star fit | Alignment with target roles from `_profile.md` |
+| Compensation | Market quality of pay |
+| Cultural signals | Team, growth, remote policy, operating style |
+| Red flags | Blockers and downside risk |
 
-**Score interpretation:**
-- 4.5+ → Strong match, recommend applying immediately
-- 4.0-4.4 → Good match, worth applying
-- 3.5-3.9 → Decent but not ideal, apply only if specific reason
-- Below 3.5 → Recommend against applying (see Ethical Use in CLAUDE.md)
+Interpretation:
+- `4.5+` Strong fit. Recommend applying.
+- `4.0-4.4` Good fit. Worth applying.
+- `3.5-3.9` Borderline. Apply only with a clear reason.
+- `<3.5` Recommend against applying.
 
-## Archetype Detection
+## Archetypes
 
-Classify every offer into one of these types (or hybrid of 2):
+Classify each job into one primary archetype, or two if genuinely hybrid:
 
-| Archetype | Key signals in JD |
-|-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+| Archetype | Typical JD signals |
+|-----------|--------------------|
+| AI Platform / LLMOps | Evals, observability, pipelines, reliability |
+| Agentic / Automation | Agents, orchestration, workflows, HITL |
+| Technical AI PM | Product discovery, roadmaps, PRDs, stakeholders |
+| AI Solutions Architect | Architecture, enterprise, integrations, systems |
+| AI Forward Deployed Engineer | Client-facing delivery, prototypes, field work |
+| AI Transformation Lead | Adoption, enablement, org change, scale |
 
-After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
+After classifying, use `_profile.md` to choose the best framing and proof points.
 
-## Global Rules
+## Global rules
 
-### NEVER
+Never:
+1. Modify `cv.md` or portfolio source files as part of an evaluation.
+2. Submit an application for the user.
+3. Share the user's phone number in outreach copy.
+4. Generate a PDF before reading the JD.
+5. Skip tracker/report updates after an evaluation.
+6. Write anything except English in this fork.
 
-1. Invent experience or metrics
-2. Modify cv.md or portfolio files
-3. Submit applications on behalf of the candidate
-4. Share phone number in generated messages
-5. Recommend comp below market rate
-6. Generate a PDF without reading the JD first
-7. Use corporate-speak
-8. Ignore the tracker (every evaluated offer gets registered)
+Always:
+1. Read `cv.md`, `_profile.md`, and `article-digest.md` before evaluating.
+2. Run `node cv-sync-check.mjs` before the first evaluation of a session.
+3. Cite exact CV evidence when matching requirements.
+4. Use web research for comp and company context.
+5. Write tracker additions as TSV files in `batch/tracker-additions/`; do not add rows to `applications.md` directly.
+6. Include `**URL:**` in every report header.
+7. Use direct, specific, fluent technical English.
+8. Prefer shipping a strong application quickly over perfecting a weak one.
 
-### ALWAYS
-
-0. **Cover letter:** If the form allows it, ALWAYS include one. Same visual design as CV. JD quotes mapped to proof points. 1 page max.
-1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
-1b. **First evaluation of each session:** Run `node cv-sync-check.mjs`. If warnings, notify user.
-2. Detect the role archetype and adapt framing per _profile.md
-3. Cite exact lines from CV when matching
-4. Use WebSearch for comp and company data
-5. Register in tracker after evaluating
-6. Generate content in the language of the JD (EN default)
-7. Be direct and actionable -- no fluff
-8. Native tech English for generated text. Short sentences, action verbs, no passive voice.
-8b. Case study URLs in PDF Professional Summary (recruiter may only read this).
-9. **Tracker additions as TSV** -- NEVER edit applications.md directly. Write TSV in `batch/tracker-additions/`.
-10. **Include `**URL:**` in every report header.**
-
-### Tools
+## Tool guidance
 
 | Tool | Use |
 |------|-----|
-| WebSearch | Comp research, trends, company culture, LinkedIn contacts, fallback for JDs |
-| WebFetch | Fallback for extracting JDs from static pages |
-| Playwright | Verify offers (browser_navigate + browser_snapshot). **NEVER 2+ agents with Playwright in parallel.** |
-| Read | cv.md, _profile.md, article-digest.md, cv-template.html |
-| Write | Temporary HTML for PDF, applications.md, reports .md |
-| Edit | Update tracker |
-| Bash | `node generate-pdf.mjs` |
-
-### Time-to-offer priority
-- Working demo + metrics > perfection
-- Apply sooner > learn more
-- 80/20 approach, timebox everything
+| WebSearch | Compensation, company context, contact discovery |
+| WebFetch | Static-page JD extraction fallback |
+| Playwright | Offer verification and SPA job pages |
+| Read | CV, profile, article digest, templates |
+| Write/Edit | Reports, tracker TSVs, temporary HTML |
+| Bash | `node generate-pdf.mjs`, pipeline scripts |

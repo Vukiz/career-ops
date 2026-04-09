@@ -1,27 +1,24 @@
-# Modo: training — Evaluación de Formación
+# Mode: training
 
-Para cada curso/cert que el candidato pregunte, evaluar 6 dimensiones:
+Evaluate courses and certifications on six dimensions:
 
-| Dimensión | Qué evalúa |
-|-----------|------------|
-| Alineación North Star | ¿Acerca o aleja del objetivo? |
-| Señal recruiter | ¿Qué piensan HMs al ver esto en un CV? |
-| Tiempo y esfuerzo | Semanas × horas/semana |
-| Coste de oportunidad | ¿Qué no puede hacer durante ese tiempo? |
-| Riesgos | ¿Contenido outdated? ¿Brand débil? ¿Demasiado básico? |
-| Entregable portfolio | ¿Produce un artefacto demostrable? |
+| Dimension | What it measures |
+|-----------|------------------|
+| North Star alignment | Does it move the candidate closer to target roles? |
+| Recruiter signal | What hiring managers will infer from it |
+| Time and effort | Weeks and hours per week |
+| Opportunity cost | What it displaces |
+| Risk | Outdated material, weak brand, too basic |
+| Portfolio output | Whether it creates a demonstrable artifact |
 
-## Veredictos
+Verdicts:
+- `DO IT`
+- `DON'T DO IT`
+- `DO IT WITH A TIMEBOX`
 
-- **HACER** → plan de 4-12 semanas con entregables semanales y scoreboard
-- **NO HACER** → alternativa mejor con justificación
-- **HACER CON TIMEBOX** (máx X semanas) → plan condensado, solo lo esencial
-
-## Prioridad
-
-Formación que mejore credibilidad en "production-grade AI":
-1. Evals y testing de LLMs
-2. Observability y monitoring
-3. Cost/reliability trade-offs
-4. AI governance y safety
+Prioritize training that improves credibility in production-grade AI:
+1. LLM evals and testing
+2. Observability and monitoring
+3. Cost and reliability trade-offs
+4. Governance and safety
 5. Enterprise AI architecture
