@@ -128,17 +128,62 @@ One real story can often answer several interview questions if its themes are un
 
 The best habit here is to keep lightweight notes after meaningful events instead of waiting until interview prep starts. The point is not to manufacture stories. It is to preserve lessons and make management judgment visible.
 
-## Missing Topics to Add Next
-The curriculum is much more coherent now, but it still has several gaps worth filling.
+## Module 10: Strategy and Roadmap Shaping
+The earlier delivery modules assume that priorities already exist. This module covers the work that happens before execution is locked in: deciding what matters, what sequence of bets makes sense, and how a manager participates in shaping a roadmap rather than merely receiving one.
 
-The first gap is strategy and roadmap shaping. We covered delivery once priorities exist, but not how a manager participates in setting direction, choosing bets, and shaping roadmap tradeoffs before execution starts.
+Strategy at the team level is usually not about inventing grand company direction. It is about connecting business goals to technical and operational choices. A manager should be able to explain why a team is working on a given problem, what customer or business outcome it serves, what alternatives were not chosen, and what assumptions make the current plan reasonable.
 
-The second gap is incident leadership. We referenced it, but we did not build a module on how a manager should behave during outages, major production issues, or crisis coordination.
+Roadmap shaping is the practical side of strategy. A roadmap is not a bucket of tasks. It is a sequence of bets under constraints. Good roadmap work requires deciding which bets are foundational, which bets create learning, which bets reduce risk, and which bets can wait. This is also where tradeoffs around platform work, quality investments, new features, and maintenance need to be made visible rather than hidden behind vague urgency.
 
-The third gap is promotions, calibration, and career ladders. We talked about feedback and performance, but not about how to assess readiness for promotion, write promotion cases, or calibrate fairly across a group.
+A manager contributes well to roadmap work by framing choices clearly. That includes naming the intended outcome, the cost of delay, the main dependencies, the technical risks, and the organizational risks. It also includes challenging fake certainty. If a roadmap contains too many top priorities, too many unproven assumptions, or too little dependency realism, the problem is not motivation. The problem is that the roadmap is not credible yet.
 
-The fourth gap is meetings and decision forums. We touched communication broadly, but not how to run staff meetings, planning reviews, retrospectives, decision reviews, and written proposals well.
+This module also includes the relationship between product strategy and engineering strategy. Engineering strategy is not a separate road that ignores the business. It is the set of technical and operational investments that make business outcomes more achievable over time. This is where topics like reducing system fragility, improving platform leverage, or paying down delivery-constraining debt become easier to justify when framed in terms of product and business effect rather than engineering preference alone.
 
-The fifth gap is change management. We touched inherited teams and conflict, but not how to roll out a new process, adjust team norms, or handle resistance to change at the system level.
+## Module 11: Promotions, Calibration, and Career Ladders
+Performance and growth are not the same thing. A person can be performing well at one level without yet being ready for the next. This module covers the part of management that turns day-to-day coaching into fair career decisions.
 
-The next topics to add, in recommended order, are strategy and roadmap shaping, promotions and calibration, incident leadership, meetings and decision forums, and then change management.
+Promotions should be based on sustained evidence of operating at the next level, not on effort, tenure, importance of a single project, or vague manager advocacy. A manager needs to understand the ladder well enough to translate observed behavior into level language. That means distinguishing between strong performance in the current role and repeated evidence of broader scope, stronger judgment, greater autonomy, or wider influence.
+
+Calibration matters because managers do not operate in isolation. A promotion case that feels obvious inside one team may look weak when compared against peer teams if expectations are inconsistent. Good calibration is not political theater. It is a mechanism for fairness. It helps prevent inflation on one side and hidden stagnation on the other.
+
+This module also includes how to write and communicate growth expectations. People develop better when they understand what the next level actually looks like in practice. That means growth conversations should not stay at the level of “be more strategic” or “show more leadership.” They should translate into behaviors, scope, decision quality, and impact patterns that can be observed over time.
+
+Managers should also be able to separate three situations clearly: solid performance at current level, growth toward the next level, and performance below expectations. Mixing those signals creates confusion and distrust. Career ladders are useful when they make standards clearer, not when they become vague motivational language.
+
+## Module 12: Incident Leadership
+Incident leadership is one of the clearest tests of management quality because stress strips away style and exposes operating habits. During an incident, the manager’s job is not to add drama or take over every technical action. The job is to create clarity, protect decision quality, keep communication disciplined, and make sure the right people are solving the right problem.
+
+The first responsibility in an incident is structure. Someone needs to own technical triage, someone needs to own communication, and someone needs to maintain situational awareness across workstreams. In smaller teams, one person may hold several of those roles, but the roles still need to exist. Without structure, incidents become noisy, duplicative, and harder to recover from.
+
+The second responsibility is communication under uncertainty. Incident communication should be factual, time-bounded, and explicit about what is known, unknown, and next. This applies upward, outward, and inside the team. False confidence is dangerous, but unstructured anxiety is also dangerous. Good incident communication reduces confusion without pretending the uncertainty is gone.
+
+The third responsibility is team protection. Incidents generate urgency, but they also generate fatigue, blame, and reactive decision-making. A good manager watches for cognitive overload, makes sure critical follow-up work is not lost, and prevents the incident from turning into unproductive fault-finding while the system is still unstable.
+
+After recovery, the work is not finished. Post-incident review should separate trigger, contributing factors, detection quality, response quality, recovery quality, and systemic follow-up. If every incident review ends with “be more careful,” the organization is not learning. Good incident leadership turns a bad moment into clearer systems, better safeguards, and stronger coordination next time.
+
+## Module 13: Meetings and Decision Forums
+Meetings are one of the most common places where management quality becomes visible. Poor meetings create drift, repetition, and confusion. Good meetings concentrate decision-making, alignment, and learning.
+
+The first principle is that different meetings serve different purposes. A planning review is not a retrospective. A status sync is not a decision forum. A staff meeting is not a place to read documents silently aloud. Many meeting problems come from trying to do too many things in one room without deciding what the room is for.
+
+A useful meeting design starts with four questions: why does this meeting exist, what decision or outcome is needed, who actually needs to be there, and what preparation is required beforehand. If those questions are weak, facilitation quality will not save the meeting.
+
+Decision forums deserve special attention. Good decision forums make the decision explicit, frame the tradeoffs, surface unresolved assumptions, record the outcome, and name the owner of follow-through. They do not end with a vague sense that “alignment improved.” They end with a clear result. Written proposals belong here too. Good written communication often improves decision quality because it forces clearer reasoning before the meeting starts.
+
+This module also covers recurring operating meetings such as staff meetings, planning reviews, retrospectives, and cross-functional syncs. The common standard across all of them is simple: every recurring forum should justify its existence through clarity, decisions, or real coordination. If a recurring meeting mostly preserves habit, it should be redesigned or removed.
+
+## Module 14: Change Management
+Change management is the discipline of moving a team or organization from one operating state to another without relying on wishful thinking. This includes new processes, changed team norms, new ownership models, reorganizations, tooling shifts, and cultural resets.
+
+The first mistake in change work is assuming that a correct idea will spread on its own. The second is assuming that resistance always means bad intent. In practice, resistance may come from confusion, local incentives, legitimate risk, prior failed changes, change fatigue, or loss of status and comfort. Good change management begins by understanding those sources rather than by labeling people as blockers too early.
+
+Useful change work usually starts with a clear reason for the change, a limited scope, and visible early wins. It also requires naming what is changing in behavior, not just what is changing in language. If a new process exists only in a document, the organization has not changed yet. If a new norm is not reinforced by leadership behavior, it is still optional.
+
+Managers also need to think about adoption design. That includes who needs to buy in, who only needs awareness, what support is needed, what metrics or signals will show whether the change is working, and what will happen if the change creates new friction. Change becomes much easier when it is broken into a few visible behavior shifts rather than launched as an abstract transformation.
+
+At the end of change work, the manager’s job is to verify whether the new state is actually operating. That requires checking behavior, outcomes, and local workarounds. Declaring success too early is one of the most common reasons changes appear to work briefly and then quietly disappear.
+
+## Further Topics
+With these additions, the curriculum now covers the main foundations of engineering management. The remaining gaps are more situational and depend on the kind of management role being targeted.
+
+The most likely future topics are financial planning and budgeting, vendor and tooling decisions, managing managers, and larger-scale organization design. Those are important, but they usually become more relevant after the current modules are solid.
