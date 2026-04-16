@@ -23,6 +23,10 @@ Rules:
 |---|---|---:|---:|---:|---|
 | Engineering Manager | Australia | AUD | 200,000 |  | User-stated anchor already used with Riot HR |
 | Software Engineering Manager | Australia | AUD | 200,000 |  | Use as the default starting point for Riot-like game/tech manager roles unless new evidence suggests otherwise |
+| Engineering Manager | Europe remote | EUR | 115,000 | 99,000 | Baseline Europe manager anchor using Amsterdam market benchmark as proxy |
+| Backend / Platform Engineering Manager | Europe remote | EUR | 114,000 | 99,000 | Baseline backend/platform manager anchor using Amsterdam software engineering manager benchmark as proxy |
+| Senior Backend Engineer (Go) | Europe remote | EUR | 84,000 | 71,000 | Baseline Europe senior backend anchor using Amsterdam senior backend engineer benchmark as proxy |
+| Senior Backend Engineer (Go) | Global remote, geo-agnostic pay | USD | 185,000 | 147,000 | High-end global remote anchor from current remote senior backend benchmark; use only when the company clearly pays global-remote rates |
 
 ## Company-Specific History
 
@@ -37,6 +41,12 @@ Rules:
 | Engineering Manager | Amsterdam, Netherlands | EUR | 115,000 | Median market benchmark | MasloJobs Amsterdam Engineering Manager salary guide | 2026-04-16 | Use as a fintech/European manager base point when the company does not publish a band |
 | Engineering Manager | Amsterdam, Netherlands | EUR | 90,000-148,000 | Market range | MasloJobs Amsterdam Engineering Manager salary guide | 2026-04-16 | 25th to 75th percentile range |
 | Engineering Manager | Netherlands | EUR | 122,000 | Median total pay benchmark | Glassdoor Amsterdam Engineering Manager estimate | 2026-04-16 | Used in Yuno evaluation as a directional benchmark |
+| Software Engineering Manager | Amsterdam, Netherlands | EUR | 114,000 | Median total pay benchmark | Glassdoor Amsterdam Software Engineering Manager estimate | 2026-04-16 | Useful proxy for backend/platform engineering manager roles in Europe |
+| Software Engineering Manager | Amsterdam, Netherlands | EUR | 99,000-142,000 | Total pay range | Glassdoor Amsterdam Software Engineering Manager estimate | 2026-04-16 | Practical Europe manager range when no company band is published |
+| Senior Backend Engineer | Amsterdam, Netherlands | EUR | 84,000 | Median total pay benchmark | Glassdoor Amsterdam Senior Backend Engineer estimate | 2026-04-16 | Good Europe proxy for senior backend and senior Go roles |
+| Senior Backend Engineer | Amsterdam, Netherlands | EUR | 71,000-99,000 | Total pay range | Glassdoor Amsterdam Senior Backend Engineer estimate | 2026-04-16 | Practical Europe IC range when the company pays local-Europe rates |
+| Senior Backend Engineer | Remote | USD | 185,000 | Median total pay benchmark | Glassdoor Remote Senior Backend Engineer estimate | 2026-04-16 | Use only for companies with clearly geo-agnostic or global remote compensation |
+| Senior Backend Engineer | Remote | USD | 147,000-224,000 | Total pay range | Glassdoor Remote Senior Backend Engineer estimate | 2026-04-16 | Useful upside anchor for strong global-remote employers |
 
 ## Recent Evaluation Notes
 
