@@ -187,3 +187,14 @@ At the end of change work, the manager’s job is to verify whether the new stat
 With these additions, the curriculum now covers the main foundations of engineering management. The remaining gaps are more situational and depend on the kind of management role being targeted.
 
 The most likely future topics are financial planning and budgeting, vendor and tooling decisions, managing managers, and larger-scale organization design. Those are important, but they usually become more relevant after the current modules are solid.
+
+## HR Screen Addendum: Agile Processes and Continuous Delivery
+Agile is best understood as a way to reduce feedback loops and improve adaptation, not as loyalty to a ritual set. In practice, that means breaking work into smaller units, making priorities visible, reviewing progress frequently, and using planning and retrospectives to improve decision quality over time. Strong managers do not treat agile as a theater of ceremonies. They use whatever planning rhythm helps the team learn, coordinate, and adjust quickly without creating unnecessary process overhead.
+
+For HR-style questions, the useful framing is that agile matters because it improves clarity, adaptability, and collaboration. A manager should be able to explain that the goal is not “doing Scrum correctly,” but helping teams respond to change, surface risk earlier, and keep delivery predictable enough for the business.
+
+Continuous delivery should be framed as the ability to move changes to production safely and regularly rather than batching risk into rare, stressful releases. The management value of continuous delivery is not speed for its own sake. It is lower release risk, faster learning, easier rollback, and better operational confidence.
+
+A manager’s role in continuous delivery is usually to improve the system around releases: better decomposition, stronger testing discipline, clearer rollout and rollback paths, shorter-lived branches, better observability, and release policies that match the risk of the change. Continuous delivery becomes credible when the team can ship often without drama, not when it simply deploys frequently.
+
+The strongest HR-ready summary is this: agile improves how the team plans and adapts, while continuous delivery improves how the team ships and learns. Both are valuable when they reduce friction and risk. Both become harmful when they turn into ritual without purpose.

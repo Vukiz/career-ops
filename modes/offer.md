@@ -41,10 +41,14 @@ Cover:
 
 ## Block D: Compensation and demand
 
-Use web research for:
-- current salary ranges,
-- company compensation reputation,
-- demand signals for the role.
+Compensation lookup order:
+1. Read `data/compensation.md`.
+2. If there is a company-specific number or a close role-family anchor, use that as the base point.
+3. If there is no usable stored anchor, use web research for:
+   - current salary ranges,
+   - company compensation reputation,
+   - demand signals for the role.
+4. When web research produces a useful new benchmark, append it to `data/compensation.md` so the next evaluation can reuse it.
 
 If hard data is missing, say that directly.
 
